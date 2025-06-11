@@ -1,10 +1,25 @@
 from fastapi import FastAPI
 from typing import List
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()  # create FastAPI instance first
 
-movies = []
+origins = [
+    "http://localhost",          
+    "http://localhost:3000",     
+    "http://localhost:8080",     
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  
+    allow_credentials=True,
+    allow_methods=["*"],   
+    allow_headers=["*"],  
+)
+movies = [{"title": "Inception", "direction": "Christopher Nolan", "year": 2010},
+    {"title": "The Matrix", "direction": "The Wachowskis", "year": 1999}]
 
 class Movie(BaseModel):
     title: str
