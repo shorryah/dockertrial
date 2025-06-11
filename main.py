@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from typing import List
 from pydantic import BaseModel
 
-app = FastAPI()  # create FastAPI instance first
+app = FastAPI()  
 
 movies = []
 
