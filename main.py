@@ -3,11 +3,7 @@ from typing import List
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-<<<<<<< HEAD
 app = FastAPI() 
-=======
-app = FastAPI()  
->>>>>>> 76ae7fa9f5818791171d236a5421502f64482420
 
 origins = [
     "http://localhost",          
